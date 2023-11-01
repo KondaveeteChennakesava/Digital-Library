@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -17,21 +19,35 @@ const Login = () => {
     const handlesubmit = (e) => {
         e.preventDefault();
         if (formdata.email === '') {
-            alert('Please fill the mail')
+            toast.error('Please fill the mail !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
         }
         else if (formdata.password === '') {
-            alert('Please fill the password')
+            toast.error('Please fill the password !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
         }
         else {
             // console.log(credentials)
             // console.log(formdata)
+            let flag = 0;
             credentials.map((ele, index, arr) => {
                 return (
                     <>
                         {(() => {
                             if (ele.email === formdata.email && ele.password === formdata.password) {
                                 // console.log(true)
+                                flag = 1;
                                 navigate('/main', { user: ele.user });
+                            }
+                        })()}
+                        {(() => {
+                            if (flag === 0){
+                                toast.error('Invalid Details !', {
+                                    position: toast.POSITION.TOP_RIGHT
+                                });
+                                flag = 1;
                             }
                         })()}
                     </>
@@ -40,11 +56,12 @@ const Login = () => {
         }
     }
     return (
+        <>
         <div className='center'>
             <h1>Login</h1>
             <form onSubmit={handlesubmit}>
                 <div className="text_field">
-                    <input type="email" name="email" onChange={(e) => setFormdata({ ...formdata, email: e.target.value })} />
+                    <input type="email" autoComplete="off" name="email" onChange={(e) => setFormdata({ ...formdata, email: e.target.value })} />
                     <span></span>
                     <label>Email</label>
                 </div>
@@ -61,6 +78,8 @@ const Login = () => {
             </form>
 
         </div>
+        <ToastContainer />
+        </>
     );
 }
 export default Login;
