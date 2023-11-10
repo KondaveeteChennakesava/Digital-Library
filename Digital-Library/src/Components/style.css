@@ -194,6 +194,7 @@ html{
     width: 400px;
     background: var(--secondary-color);
     border-radius: 10px;
+    box-shadow: 9px 10px 13px grey;
 }
 .center h1{
     text-align: center;

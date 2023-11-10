@@ -39,7 +39,7 @@ const Login = () => {
                             if (ele.email === formdata.email && ele.password === formdata.password) {
                                 // console.log(true)
                                 flag = 1;
-                                navigate('/main', { user: ele.user });
+                                navigate('/main', { user: ele.user});
                             }
                         })()}
                         {(() => {
@@ -83,3 +83,9 @@ const Login = () => {
     );
 }
 export default Login;
+
+
+
+
+// could be there a better a way to start a day?
+// books and coffee
