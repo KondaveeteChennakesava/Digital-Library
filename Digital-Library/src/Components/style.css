@@ -265,6 +265,26 @@ input[type="submit"]:hover{
     border-color: var(--primary-color);
     transition: .5s;
 }
+input[type="logout"]{
+    width: 50%;
+    height: 45px;
+    border: 1px solid;
+    background: var(--secondary-color);
+    border-radius: 25px;
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    gap: 100px;
+    outline: none;
+    text-align: center;
+    margin-right: 10px;
+}
+input[type="logout"]:hover{
+    border-color: var(--primary-color);
+    transition: .5s;
+}
 .signup_link{
     margin: 30px 0;
     text-align: center;
@@ -276,4 +296,15 @@ input[type="submit"]:hover{
 }
 .signup_link Link:hover{
     text-decoration: underline;
+}
+.logout{
+    display: inline;
+    float: right;
+}
+.heading{
+    display: inline;
+    float: left;
+    font-size: 25px;
+    color: var(--secondary-color);
+    font-weight:500;
 }

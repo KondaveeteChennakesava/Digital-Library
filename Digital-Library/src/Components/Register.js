@@ -78,7 +78,7 @@ const Register = () => {
                         <label>Email</label>
                     </div>
                     <div className="text_field">
-                        <input type="password" name="password" onChange={(e) => setFormdata({ ...formdata, password: e.target.value })} />
+                        <input type="password" name="password" autoComplete="current-password" onChange={(e) => setFormdata({ ...formdata, password: e.target.value })} />
                         <label>Password</label>
                     </div>
                     <input type="submit" value="submit" />

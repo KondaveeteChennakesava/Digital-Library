@@ -56,8 +56,12 @@ app.post('/register', (req, res, next) => {
     catch (err) {
         console.log(err);
     }
+    // return res.status(200).json(reg);
     return res.send({ msg: "inserted", result: reg })
 })
+
+
+
 
 app.get('/getcred', async (req, res, next) => {
     // res.send("success")

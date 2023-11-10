@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "./Card";
 import axios from "axios";
+import Navbar from "./Navbar";
 const Main = () => {
     const [search, setSearch] = useState("");
     const [bookData, setData] = useState([]);
@@ -13,6 +14,7 @@ const Main = () => {
     }
     return (
         <>
+        <Navbar />
             <div className="header">
                 <div className="row1">
                     <h1>A room without books is like<br /> a body without a soul.</h1>
