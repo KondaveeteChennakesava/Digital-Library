@@ -11,7 +11,7 @@ const Register = () => {
         'email': '',
         'password': ''
     })
-    let [credentials, setCred] = useState([]) // let data = []
+    let [credentials, setCred] = useState([])
     useEffect(() => {
         axios.get('http://localhost:5000/getcred').then((response) => {
             setCred(response.data.creddata); // output of the frontend data
@@ -54,7 +54,7 @@ const Register = () => {
             if (!flag) {
                 axios.post('http://localhost:5000/register', { formdata })
                     .then((res) => console.log(res.data))
-                // const showToastMessage = () => {
+                
                 toast.success('Registered Succesful !', {
                     position: toast.POSITION.TOP_RIGHT
                 });
@@ -74,7 +74,7 @@ const Register = () => {
                         <label>Name</label>
                     </div>
                     <div className="text_field">
-                        <input type="email" autoComplete="off" name="email" onChange={(e) => setFormdata({ ...formdata, email: e.target.value })} />
+                        <input type="email" name="email" onChange={(e) => setFormdata({ ...formdata, email: e.target.value })} />
                         <label>Email</label>
                     </div>
                     <div className="text_field">
@@ -83,7 +83,7 @@ const Register = () => {
                     </div>
                     <input type="submit" value="submit" />
                     <div className="signup_link">
-                        Already Have an Account<Link to='/login' className="link"><strong>LOGIN</strong></Link>
+                        Already Have an Account<Link to='/' className="link"><strong>LOGIN</strong></Link>
                     </div>
                 </form>
             </div>

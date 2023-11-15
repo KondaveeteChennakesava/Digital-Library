@@ -74,10 +74,9 @@ const Login = () => {
                     <input type="submit" value="Login" />
 
                     <div className="signup_link">
-                        Not a member<Link to='/' className="link"><strong>REGISTER</strong></Link>
+                        Not a member<Link to='/register' className="link"><strong>REGISTER</strong></Link>
                     </div>
                 </form>
-
             </div>
             <ToastContainer />
         </>

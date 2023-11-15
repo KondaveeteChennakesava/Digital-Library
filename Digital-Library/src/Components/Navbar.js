@@ -1,5 +1,4 @@
 import React from 'react'
-// import Logout from './Logout'
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ function Navbar() {
             position: toast.POSITION.TOP_RIGHT
         });
         setTimeout(() => {
-            navigate('/login');
+            navigate('/');
         }, 6000)
     }
     return (

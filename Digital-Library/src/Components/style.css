@@ -279,7 +279,7 @@ input[type="logout"]{
     gap: 100px;
     outline: none;
     text-align: center;
-    margin-right: 10px;
+    margin: 10px;
 }
 input[type="logout"]:hover{
     border-color: var(--primary-color);

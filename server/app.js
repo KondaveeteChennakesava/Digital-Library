@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://Kesava:Library2123@Library.mzbwxdi.mongodb.net/L
     .catch((err) => console.log(err));
 
 app.post('/register', (req, res, next) => {
-    console.log(req.body.formdata)
+    // console.log(req.body.formdata)
     const { user, email, password } = req.body.formdata
     const reg = new Register({
         user,
